@@ -1,15 +1,15 @@
 public abstract class RummyCard {
-    boolean isWildCard;
+    int wildCard;
 
     public RummyCard() {
-        isWildCard = false;
+        super();
     }
 
-    public boolean isWildCard() {
-        return isWildCard;
+    public boolean isWildCard(Card card) {
+        return this.wildCard == card.rank;
     }
 
-    public void setWildCard(boolean wildCard) {
-        isWildCard = wildCard;
+    public void setWildCard(Card card) {
+        this.wildCard = card.rank;
     }
 }

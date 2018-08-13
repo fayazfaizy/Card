@@ -1,7 +1,7 @@
 public class Card extends RummyCard{
-    private final String Suit[] = {"CLUB", "DIAMOND", "HEART", "SPADE", "JOKER"};
-    final String SUITS = "CDHS*";
-    final String PIPS = "23456789TJQKA*";
+    final String[] SUITS_UNICODE = {"\u2663", "\u2666", "\u2665", "\u2660", "\uD83C\uDCCF"};
+    final String SUITS = "CDHS#";
+    final String PIPS = "23456789TJQKA#";
     final int SUIT_COUNT = 13;
     final int JOKER_VALUE = 52;
 
@@ -17,7 +17,7 @@ public class Card extends RummyCard{
             this.rank = seq % SUIT_COUNT;
         }
         this.seq = seq;
-        this.suit = Suit[seq/ SUIT_COUNT];
+        this.suit = SUITS_UNICODE[seq/ SUIT_COUNT];
     }
 
     public int compareRank( Card card){
@@ -30,12 +30,11 @@ public class Card extends RummyCard{
 
     @Override
     public String toString(){
-        return this.suit + this.rank;
+        return  PIPS.charAt(this.rank) + this.suit ;
     }
 
-
     public String[] getSuit() {
-        return Suit;
+        return SUITS_UNICODE;
     }
 
     public void setSuit(String suit) {

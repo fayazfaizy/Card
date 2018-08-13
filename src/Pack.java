@@ -23,6 +23,10 @@ public class Pack {
         return temp;
     }
 
+    public void addCard(Card card){
+        this.pack.add(card);
+    }
+
     public ArrayList<Card> pickNCard(int n){
         ArrayList<Card> cards = new ArrayList<>();
 
